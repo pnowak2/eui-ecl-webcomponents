@@ -27,6 +27,10 @@ export namespace Components {
   }
   interface EclShowcase {}
   interface EclSvgDefinitions {}
+  interface EclTag {
+    'isRemovable': boolean;
+    'styleClass': string;
+  }
 }
 
 declare global {
@@ -61,12 +65,19 @@ declare global {
     prototype: HTMLEclSvgDefinitionsElement;
     new (): HTMLEclSvgDefinitionsElement;
   };
+
+  interface HTMLEclTagElement extends Components.EclTag, HTMLStencilElement {}
+  var HTMLEclTagElement: {
+    prototype: HTMLEclTagElement;
+    new (): HTMLEclTagElement;
+  };
   interface HTMLElementTagNameMap {
     'ecl-button': HTMLEclButtonElement;
     'ecl-icon': HTMLEclIconElement;
     'ecl-message': HTMLEclMessageElement;
     'ecl-showcase': HTMLEclShowcaseElement;
     'ecl-svg-definitions': HTMLEclSvgDefinitionsElement;
+    'ecl-tag': HTMLEclTagElement;
   }
 }
 
@@ -89,6 +100,10 @@ declare namespace LocalJSX {
   }
   interface EclShowcase {}
   interface EclSvgDefinitions {}
+  interface EclTag {
+    'isRemovable'?: boolean;
+    'styleClass'?: string;
+  }
 
   interface IntrinsicElements {
     'ecl-button': EclButton;
@@ -96,6 +111,7 @@ declare namespace LocalJSX {
     'ecl-message': EclMessage;
     'ecl-showcase': EclShowcase;
     'ecl-svg-definitions': EclSvgDefinitions;
+    'ecl-tag': EclTag;
   }
 }
 
@@ -110,6 +126,7 @@ declare module "@stencil/core" {
       'ecl-message': LocalJSX.EclMessage & JSXBase.HTMLAttributes<HTMLEclMessageElement>;
       'ecl-showcase': LocalJSX.EclShowcase & JSXBase.HTMLAttributes<HTMLEclShowcaseElement>;
       'ecl-svg-definitions': LocalJSX.EclSvgDefinitions & JSXBase.HTMLAttributes<HTMLEclSvgDefinitionsElement>;
+      'ecl-tag': LocalJSX.EclTag & JSXBase.HTMLAttributes<HTMLEclTagElement>;
     }
   }
 }

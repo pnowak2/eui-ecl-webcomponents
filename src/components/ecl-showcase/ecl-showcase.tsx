@@ -58,6 +58,11 @@ export class EclShowcase {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan semper lorem, ac mollis lacus tincidunt eu.
         Duis scelerisque diam eu tempus fringilla.
       </ecl-message>
+
+      <h1>Tag</h1>
+
+      <ecl-tag>Default</ecl-tag>
+      <ecl-tag is-removable="true">Removable Tag</ecl-tag>
     </div>;
   }
 }

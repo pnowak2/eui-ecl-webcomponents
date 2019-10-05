@@ -3,7 +3,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
 @Component({
   tag: 'ecl-button',
   styleUrl: 'ecl-button.css',
-  shadow: true
+  shadow: false
 })
 export class EclButton {
   @Prop() styleClass: string;
