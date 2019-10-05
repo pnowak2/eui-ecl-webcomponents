@@ -1,19 +1,30 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'ecl-button',
   styleUrl: 'ecl-button.css',
-  shadow: true
+  shadow: false
 })
 export class EclButton {
-
   @Prop() styleClass: string;
+  @Prop() type: string = 'primary';
+
+  getClass(): string {
+    return ['ecl-button', 'b'].join('');
+  }
 
   render() {
     return (
-      <div class="ecl-button { styleClass }">
-        <slot></slot>
-      </div>
+      <Host
+        type="primary"
+        class={[`ecl-button ecl-button--${this.type}`].join(' ')}>
+        <span class="ecl-button__container">
+          <span class="ecl-button__label">
+            <slot></slot>
+          </span>
+          <slot name="icon"></slot>
+        </span>
+      </Host>
     )
   }
 }

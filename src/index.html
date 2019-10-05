@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>ECL Webcomponents hackaton</title>
 
-  <link rel="stylesheet" href="/assets/css/ecl-ec-preset-full.css">
+  <link rel="stylesheet" href="/build/eui-webcomponents.css">
 
   <script type="module" src="/build/eui-webcomponents.esm.js"></script>
   <script nomodule src="/build/eui-webcomponents.js"></script>
 
 </head>
+
 <body>
+  <ecl-button>Default</ecl-button>
 
-  <ecl-button>Save</ecl-button>
+  <ecl-button type="primary">Primary</ecl-button>
+  <ecl-button type="secondary">Secondary</ecl-button>
+  <ecl-button type="ghost">Ghost</ecl-button>
+  <ecl-button type="search">Search</ecl-button>
+  <ecl-button type="call">Call</ecl-button>
 
-  <button class="ecl-button">btn</button>
+  <ecl-button>
+    With icon
+    <span slot="icon">x</span>
+  </ecl-button>
 </body>
+
 </html>
