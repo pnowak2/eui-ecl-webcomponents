@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 // import AppLogo from "../../assets/icons/svg/ui/close.svg";
 
 @Component({
@@ -19,6 +19,7 @@ export class EclIcon {
       `ecl-icon--${this.size}`,
       `ecl-icon--${this.color}`,
       `ecl-icon--${this.transform}`,
+      this.styleClass
     ].join(' ');
   }
 

@@ -20,6 +20,11 @@ export namespace Components {
     'styleClass': string;
     'transform': string;
   }
+  interface EclMessage {
+    'styleClass': string;
+    'title': string;
+    'typeClass': string;
+  }
   interface EclShowcase {}
   interface EclSvgDefinitions {}
 }
@@ -39,6 +44,12 @@ declare global {
     new (): HTMLEclIconElement;
   };
 
+  interface HTMLEclMessageElement extends Components.EclMessage, HTMLStencilElement {}
+  var HTMLEclMessageElement: {
+    prototype: HTMLEclMessageElement;
+    new (): HTMLEclMessageElement;
+  };
+
   interface HTMLEclShowcaseElement extends Components.EclShowcase, HTMLStencilElement {}
   var HTMLEclShowcaseElement: {
     prototype: HTMLEclShowcaseElement;
@@ -53,6 +64,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'ecl-button': HTMLEclButtonElement;
     'ecl-icon': HTMLEclIconElement;
+    'ecl-message': HTMLEclMessageElement;
     'ecl-showcase': HTMLEclShowcaseElement;
     'ecl-svg-definitions': HTMLEclSvgDefinitionsElement;
   }
@@ -70,12 +82,18 @@ declare namespace LocalJSX {
     'styleClass'?: string;
     'transform'?: string;
   }
+  interface EclMessage {
+    'styleClass'?: string;
+    'title'?: string;
+    'typeClass'?: string;
+  }
   interface EclShowcase {}
   interface EclSvgDefinitions {}
 
   interface IntrinsicElements {
     'ecl-button': EclButton;
     'ecl-icon': EclIcon;
+    'ecl-message': EclMessage;
     'ecl-showcase': EclShowcase;
     'ecl-svg-definitions': EclSvgDefinitions;
   }
@@ -89,6 +107,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'ecl-button': LocalJSX.EclButton & JSXBase.HTMLAttributes<HTMLEclButtonElement>;
       'ecl-icon': LocalJSX.EclIcon & JSXBase.HTMLAttributes<HTMLEclIconElement>;
+      'ecl-message': LocalJSX.EclMessage & JSXBase.HTMLAttributes<HTMLEclMessageElement>;
       'ecl-showcase': LocalJSX.EclShowcase & JSXBase.HTMLAttributes<HTMLEclShowcaseElement>;
       'ecl-svg-definitions': LocalJSX.EclSvgDefinitions & JSXBase.HTMLAttributes<HTMLEclSvgDefinitionsElement>;
     }

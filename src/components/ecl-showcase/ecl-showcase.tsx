@@ -41,6 +41,23 @@ export class EclShowcase {
       <ecl-icon icon="general--audio" transform="rotate-90"></ecl-icon>
       <ecl-icon icon="general--audio" transform="rotate-180"></ecl-icon>
       <ecl-icon icon="general--audio" transform="rotate-270"></ecl-icon>
+
+      <h1>Message</h1>
+
+      <ecl-message title="Information message" typeClass="info">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan semper lorem, ac mollis lacus tincidunt eu.
+        Duis scelerisque diam eu tempus fringilla.
+      </ecl-message>
+
+      <ecl-message title="Warning message" typeClass="warning">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan semper lorem, ac mollis lacus tincidunt eu.
+        Duis scelerisque diam eu tempus fringilla.
+      </ecl-message>
+
+      <ecl-message title="Error message" typeClass="error">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan semper lorem, ac mollis lacus tincidunt eu.
+        Duis scelerisque diam eu tempus fringilla.
+      </ecl-message>
     </div>;
   }
 }
