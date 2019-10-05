@@ -13,20 +13,15 @@ export namespace Components {
     'styleClass': string;
     'type': string;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface EclIcon {
+    'color': string;
+    'icon': string;
+    'size': string;
+    'styleClass': string;
+    'transform': string;
   }
+  interface EclShowcase {}
+  interface EclSvgDefinitions {}
 }
 
 declare global {
@@ -38,14 +33,28 @@ declare global {
     new (): HTMLEclButtonElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLEclIconElement extends Components.EclIcon, HTMLStencilElement {}
+  var HTMLEclIconElement: {
+    prototype: HTMLEclIconElement;
+    new (): HTMLEclIconElement;
+  };
+
+  interface HTMLEclShowcaseElement extends Components.EclShowcase, HTMLStencilElement {}
+  var HTMLEclShowcaseElement: {
+    prototype: HTMLEclShowcaseElement;
+    new (): HTMLEclShowcaseElement;
+  };
+
+  interface HTMLEclSvgDefinitionsElement extends Components.EclSvgDefinitions, HTMLStencilElement {}
+  var HTMLEclSvgDefinitionsElement: {
+    prototype: HTMLEclSvgDefinitionsElement;
+    new (): HTMLEclSvgDefinitionsElement;
   };
   interface HTMLElementTagNameMap {
     'ecl-button': HTMLEclButtonElement;
-    'my-component': HTMLMyComponentElement;
+    'ecl-icon': HTMLEclIconElement;
+    'ecl-showcase': HTMLEclShowcaseElement;
+    'ecl-svg-definitions': HTMLEclSvgDefinitionsElement;
   }
 }
 
@@ -54,24 +63,21 @@ declare namespace LocalJSX {
     'styleClass'?: string;
     'type'?: string;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface EclIcon {
+    'color'?: string;
+    'icon'?: string;
+    'size'?: string;
+    'styleClass'?: string;
+    'transform'?: string;
   }
+  interface EclShowcase {}
+  interface EclSvgDefinitions {}
 
   interface IntrinsicElements {
     'ecl-button': EclButton;
-    'my-component': MyComponent;
+    'ecl-icon': EclIcon;
+    'ecl-showcase': EclShowcase;
+    'ecl-svg-definitions': EclSvgDefinitions;
   }
 }
 
@@ -82,7 +88,9 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'ecl-button': LocalJSX.EclButton & JSXBase.HTMLAttributes<HTMLEclButtonElement>;
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'ecl-icon': LocalJSX.EclIcon & JSXBase.HTMLAttributes<HTMLEclIconElement>;
+      'ecl-showcase': LocalJSX.EclShowcase & JSXBase.HTMLAttributes<HTMLEclShowcaseElement>;
+      'ecl-svg-definitions': LocalJSX.EclSvgDefinitions & JSXBase.HTMLAttributes<HTMLEclSvgDefinitionsElement>;
     }
   }
 }
