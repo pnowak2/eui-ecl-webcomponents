@@ -10,6 +10,11 @@ export class EclShowcase {
     return <div>
       <img class="hck-eui-team" src="assets/images/fossa-eui-team.png" alt="fossa eui team"/>
 
+      <div class="ecl-u-pa-xl">
+      <h1>EU-FOSSA Hackaton 2019</h1>
+      <p>Below is result of first day of creating technology agnostic version of <a href="https://eui.ecdevops.eu/screen/app/ecl" target="_blank">eui/ECL components</a> which are done using Angular framework</p>
+      <p>Since webcomponents is an official browser standard, there's no need for any framework for them to work, just put there in plain html and use immediately</p>
+
       <h1>ECL Button</h1>
 
       <ecl-button styleClass="ecl-u-hackaton">Default</ecl-button>
@@ -51,10 +56,14 @@ export class EclShowcase {
         Duis scelerisque diam eu tempus fringilla.
       </ecl-message>
 
+      <br/>
+
       <ecl-message title="Warning message" typeClass="warning">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan semper lorem, ac mollis lacus tincidunt eu.
         Duis scelerisque diam eu tempus fringilla.
       </ecl-message>
+
+      <br/>
 
       <ecl-message title="Error message" typeClass="error">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan semper lorem, ac mollis lacus tincidunt eu.
@@ -97,6 +106,10 @@ export class EclShowcase {
           opportunities.
         </p>
       </ecl-expandable>
+
+      <footer class="hck-footer">EU-FOSSA@Bruxelles, In any questions please do not hesitate to contact me <a href="mailto:piotr-andrzej.nowak@ext.ec.europa.eu">here</a></footer>
+      </div>
+
     </div>;
   }
 }
