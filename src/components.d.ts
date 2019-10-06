@@ -21,6 +21,9 @@ export namespace Components {
     'styleClass': string;
     'type': string;
   }
+  interface EclExpandable {
+    'styleClass': string;
+  }
   interface EclIcon {
     'color': string;
     'icon': string;
@@ -62,6 +65,12 @@ declare global {
     new (): HTMLEclButtonElement;
   };
 
+  interface HTMLEclExpandableElement extends Components.EclExpandable, HTMLStencilElement {}
+  var HTMLEclExpandableElement: {
+    prototype: HTMLEclExpandableElement;
+    new (): HTMLEclExpandableElement;
+  };
+
   interface HTMLEclIconElement extends Components.EclIcon, HTMLStencilElement {}
   var HTMLEclIconElement: {
     prototype: HTMLEclIconElement;
@@ -95,6 +104,7 @@ declare global {
     'ecl-accordion': HTMLEclAccordionElement;
     'ecl-accordion-item': HTMLEclAccordionItemElement;
     'ecl-button': HTMLEclButtonElement;
+    'ecl-expandable': HTMLEclExpandableElement;
     'ecl-icon': HTMLEclIconElement;
     'ecl-message': HTMLEclMessageElement;
     'ecl-showcase': HTMLEclShowcaseElement;
@@ -115,6 +125,9 @@ declare namespace LocalJSX {
   interface EclButton {
     'styleClass'?: string;
     'type'?: string;
+  }
+  interface EclExpandable {
+    'styleClass'?: string;
   }
   interface EclIcon {
     'color'?: string;
@@ -139,6 +152,7 @@ declare namespace LocalJSX {
     'ecl-accordion': EclAccordion;
     'ecl-accordion-item': EclAccordionItem;
     'ecl-button': EclButton;
+    'ecl-expandable': EclExpandable;
     'ecl-icon': EclIcon;
     'ecl-message': EclMessage;
     'ecl-showcase': EclShowcase;
@@ -156,6 +170,7 @@ declare module "@stencil/core" {
       'ecl-accordion': LocalJSX.EclAccordion & JSXBase.HTMLAttributes<HTMLEclAccordionElement>;
       'ecl-accordion-item': LocalJSX.EclAccordionItem & JSXBase.HTMLAttributes<HTMLEclAccordionItemElement>;
       'ecl-button': LocalJSX.EclButton & JSXBase.HTMLAttributes<HTMLEclButtonElement>;
+      'ecl-expandable': LocalJSX.EclExpandable & JSXBase.HTMLAttributes<HTMLEclExpandableElement>;
       'ecl-icon': LocalJSX.EclIcon & JSXBase.HTMLAttributes<HTMLEclIconElement>;
       'ecl-message': LocalJSX.EclMessage & JSXBase.HTMLAttributes<HTMLEclMessageElement>;
       'ecl-showcase': LocalJSX.EclShowcase & JSXBase.HTMLAttributes<HTMLEclShowcaseElement>;

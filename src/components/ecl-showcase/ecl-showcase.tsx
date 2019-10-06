@@ -85,6 +85,16 @@ export class EclShowcase {
               commitment of large players to global trade governance, the EU must take the lead.
           </ecl-accordion-item>
       </ecl-accordion>
+
+      <h1>Expandable</h1>
+
+      <ecl-expandable>
+        <p class="ecl-u-type-paragraph-m">
+          The EU is building an energy union that ensures Europe’s energy supply is safe,
+          viable and accessible to all. In doing so, it can boost the economy and attract investments that can create new jobs
+          opportunities.
+        </p>
+      </ecl-expandable>
     </div>;
   }
 }
