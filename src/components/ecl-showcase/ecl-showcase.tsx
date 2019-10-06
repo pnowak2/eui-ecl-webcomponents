@@ -8,6 +8,8 @@ import { Component, h } from '@stencil/core';
 export class EclShowcase {
   render() {
     return <div>
+      <img class="hck-eui-team" src="assets/images/fossa-eui-team.png" alt="fossa eui team"/>
+
       <h1>ECL Button</h1>
 
       <ecl-button styleClass="ecl-u-hackaton">Default</ecl-button>

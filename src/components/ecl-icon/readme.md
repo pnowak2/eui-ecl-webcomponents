@@ -21,6 +21,7 @@
 ### Used by
 
  - [ecl-accordion-item](../ecl-accordion)
+ - [ecl-expandable](../ecl-expandable)
  - [ecl-message](../ecl-message)
  - [ecl-showcase](../ecl-showcase)
  - [ecl-tag](../ecl-tag)
@@ -29,6 +30,7 @@
 ```mermaid
 graph TD;
   ecl-accordion-item --> ecl-icon
+  ecl-expandable --> ecl-icon
   ecl-message --> ecl-icon
   ecl-showcase --> ecl-icon
   ecl-tag --> ecl-icon
