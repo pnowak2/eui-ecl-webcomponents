@@ -22,6 +22,7 @@ export namespace Components {
     'type': string;
   }
   interface EclExpandable {
+    'isExpanded': boolean;
     'styleClass': string;
   }
   interface EclIcon {
@@ -127,6 +128,7 @@ declare namespace LocalJSX {
     'type'?: string;
   }
   interface EclExpandable {
+    'isExpanded'?: boolean;
     'styleClass'?: string;
   }
   interface EclIcon {
