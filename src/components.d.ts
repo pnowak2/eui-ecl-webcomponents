@@ -9,6 +9,14 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface EclAccordion {
+    'styleClass': string;
+  }
+  interface EclAccordionItem {
+    'isExpanded': boolean;
+    'label': string;
+    'styleClass': string;
+  }
   interface EclButton {
     'styleClass': string;
     'type': string;
@@ -35,6 +43,18 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLEclAccordionElement extends Components.EclAccordion, HTMLStencilElement {}
+  var HTMLEclAccordionElement: {
+    prototype: HTMLEclAccordionElement;
+    new (): HTMLEclAccordionElement;
+  };
+
+  interface HTMLEclAccordionItemElement extends Components.EclAccordionItem, HTMLStencilElement {}
+  var HTMLEclAccordionItemElement: {
+    prototype: HTMLEclAccordionItemElement;
+    new (): HTMLEclAccordionItemElement;
+  };
 
   interface HTMLEclButtonElement extends Components.EclButton, HTMLStencilElement {}
   var HTMLEclButtonElement: {
@@ -72,6 +92,8 @@ declare global {
     new (): HTMLEclTagElement;
   };
   interface HTMLElementTagNameMap {
+    'ecl-accordion': HTMLEclAccordionElement;
+    'ecl-accordion-item': HTMLEclAccordionItemElement;
     'ecl-button': HTMLEclButtonElement;
     'ecl-icon': HTMLEclIconElement;
     'ecl-message': HTMLEclMessageElement;
@@ -82,6 +104,14 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface EclAccordion {
+    'styleClass'?: string;
+  }
+  interface EclAccordionItem {
+    'isExpanded'?: boolean;
+    'label'?: string;
+    'styleClass'?: string;
+  }
   interface EclButton {
     'styleClass'?: string;
     'type'?: string;
@@ -106,6 +136,8 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'ecl-accordion': EclAccordion;
+    'ecl-accordion-item': EclAccordionItem;
     'ecl-button': EclButton;
     'ecl-icon': EclIcon;
     'ecl-message': EclMessage;
@@ -121,6 +153,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'ecl-accordion': LocalJSX.EclAccordion & JSXBase.HTMLAttributes<HTMLEclAccordionElement>;
+      'ecl-accordion-item': LocalJSX.EclAccordionItem & JSXBase.HTMLAttributes<HTMLEclAccordionItemElement>;
       'ecl-button': LocalJSX.EclButton & JSXBase.HTMLAttributes<HTMLEclButtonElement>;
       'ecl-icon': LocalJSX.EclIcon & JSXBase.HTMLAttributes<HTMLEclIconElement>;
       'ecl-message': LocalJSX.EclMessage & JSXBase.HTMLAttributes<HTMLEclMessageElement>;
